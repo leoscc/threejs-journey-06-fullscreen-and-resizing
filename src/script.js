@@ -47,12 +47,21 @@ window.addEventListener("resize", () => {
 
 // Fullscreen
 window.addEventListener("dblclick", () => {
-  if (!document.fullscreenElement) {
-    console.log("Go fullscreen");
-    canvas.requestFullscreen();
+  const fullscreenElement =
+    document.fullscreenElement || document.webkitFullscreenElement;
+
+  if (!fullscreenElement) {
+    if (canvas.requestFullscreen) {
+      canvas.requestFullscreen();
+    } else if (canvas.webkitRequestFullscreen) {
+      canvas.webkitRequestFullscreen();
+    }
   } else {
-    console.log("Leave fullscreen");
-    document.exitFullscreen();
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
   }
 });
 
