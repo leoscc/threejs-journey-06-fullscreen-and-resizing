@@ -28,6 +28,13 @@ const sizes = {
 };
 
 /**
+ * Resize
+ */
+window.addEventListener("resize", () => {
+  console.log("Window has been resized");
+});
+
+/**
  * Camera
  */
 // Base camera
