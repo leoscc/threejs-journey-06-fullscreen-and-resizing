@@ -45,6 +45,11 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
+// Fullscreen
+window.addEventListener("dblclick", () => {
+  console.log("Double Click");
+});
+
 /**
  * Camera
  */
