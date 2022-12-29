@@ -47,7 +47,13 @@ window.addEventListener("resize", () => {
 
 // Fullscreen
 window.addEventListener("dblclick", () => {
-  console.log("Double Click");
+  if (!document.fullscreenElement) {
+    console.log("Go fullscreen");
+    canvas.requestFullscreen();
+  } else {
+    console.log("Leave fullscreen");
+    document.exitFullscreen();
+  }
 });
 
 /**
