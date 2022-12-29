@@ -32,6 +32,9 @@ const sizes = {
  */
 window.addEventListener("resize", () => {
   console.log("Window has been resized");
+  // Update sizes
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
 });
 
 /**
